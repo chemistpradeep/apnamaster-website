@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | ApnaMaster (apnamaster.in)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Apna<span>Master</span>
+      </a>
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="blog.html" class="nav-link">Updates & News</a>
+        <a href="contact.html" class="nav-link active">Contact Us</a>
+        <button class="btn btn-accent" onclick="openEnrollModal('General Contact')">Enroll Now</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="section container">
+    <h1 class="section-title">Contact & Visit Us</h1>
+    <p class="section-subtitle">Have questions? We are here to guide you toward the right learning path.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <h3>Get In Touch</h3>
+        <p style="margin-bottom: 1.5rem; color: #CBD5E1;">Reach out to our admissions helpdesk for batch timings, fee structures, and trial classes.</p>
+        
+        <div class="info-item">
+          <span>📍</span>
+          <div>
+            <strong>Address</strong>
+            <p style="font-size: 0.9rem; color: #CBD5E1;">Main Coaching Hub, Knowledge Park, City Center</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span>📞</span>
+          <div>
+            <strong>Phone / Helpline</strong>
+            <p style="font-size: 0.9rem; color: #CBD5E1;">+91 83181 23116</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span>🌐</span>
+          <div>
+            <strong>Official Website</strong>
+            <p style="font-size: 0.9rem; color: #CBD5E1;">apnamaster.in</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color: var(--bg-alt); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border);">
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">Send Us a Message</h3>
+        <form onsubmit="handleInquirySubmit(event)">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="10-digit mobile number" required>
+          </div>
+          <div class="form-group">
+            <label>Target Class</label>
+            <select class="form-control" required>
+              <option value="">Select Class</option>
+              <option>Class 6th</option>
+              <option>Class 7th</option>
+              <option>Class 8th</option>
+              <option>Class 9th</option>
+              <option>Class 10th</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message or Query</label>
+            <textarea class="form-control" rows="4" placeholder="Tell us what you'd like to ask..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent" style="width: 100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="inquiryModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modalTitle" style="color: var(--primary); margin-bottom: 0.5rem;">Enrollment Inquiry</h3>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">Fill in your details below and our counseling team will call you back within 2 hours.</p>
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label>Student Name</label>
+          <input type="text" class="form-control" placeholder="Student name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="10-digit phone number" required>
+        </div>
+        <div class="form-group">
+          <label>Course Selected</label>
+          <input type="text" id="modalCourseInput" class="form-control" readonly>
+        </div>
+        <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 0.5rem;">Confirm & Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="https://wa.me/918318123116?text=Hi%20ApnaMaster,%20I%20want%20to%20inquire%20about%20admissions." target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>ApnaMaster</h4>
+        <p style="font-size:0.875rem; color:#94A3B8; margin-bottom: 1rem;">Empowering middle & high school students with rock-solid foundation coaching in Science and Mathematics.</p>
+        <p style="font-size:0.85rem; color:var(--accent);">Domain: <strong>apnamaster.in</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="courses.html">Class 6th - 10th Courses</a></li>
+          <li><a href="blog.html">Daily Updates & Tips</a></li>
+          <li><a href="contact.html">Admissions Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Classes</h4>
+        <ul>
+          <li><a href="courses.html">Class 6th Foundation</a></li>
+          <li><a href="courses.html">Class 7th & 8th Integrated</a></li>
+          <li><a href="courses.html">Class 9th Board Prep</a></li>
+          <li><a href="courses.html">Class 10th Board Intensive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ApnaMaster (apnamaster.in). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
