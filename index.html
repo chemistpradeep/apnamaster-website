@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Master EduTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">Apna Master EduTech</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#admission">Admission</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Shape Your Future with ApnaMaster.in</h1>
+        <p>Comprehensive preparation for Class 9–12 Math, Science, and Competitive Exams.</p>
+        <a href="#admission" class="btn-primary">Enroll Now</a>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <h2>Our Offered Batches</h2>
+        <div class="course-grid">
+            <div class="card">
+                <h3>Class 10 Science & Math</h3>
+                <p>Complete board syllabus coverage, regular mock tests, and personalized doubt clearance.</p>
+            </div>
+            <div class="card">
+                <h3>Class 12 Board Prep</h3>
+                <p>In-depth Physics, Chemistry, and Mathematics training with focus on board scoring patterns.</p>
+            </div>
+            <div class="card">
+                <h3>Competitive Foundation</h3>
+                <p>Targeted problem-solving sessions and speed techniques for competitive entrance exams.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission / Inquiry Form -->
+    <section id="admission" class="section bg-light">
+        <h2>Student Admission Inquiry</h2>
+        <p>Fill out the form below and our counseling team will contact you within 24 hours.</p>
+
+        <form id="inquiryForm" class="form">
+            <div class="form-group">
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName" required placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required placeholder="Enter 10-digit mobile number">
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" required>
+                    <option value="">-- Choose a Batch --</option>
+                    <option value="Class 10">Class 10 (Science & Math)</option>
+                    <option value="Class 12">Class 12 (Physics/Chemistry/Math)</option>
+                    <option value="Foundation">Competitive Foundation</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary">Submit Inquiry</button>
+        </form>
+        <p id="formStatus" class="status-msg"></p>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p><strong>Address:</strong> Main Road, Near City Center, Kanpur, U.P.</p>
+        <p><strong>Phone:</strong> +91 8318123116</p>
+        <p><strong>Timing:</strong> Monday – Saturday: 8:00 AM – 7:00 PM</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Apna Master EduTech. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
