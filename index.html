@@ -1,93 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apna Master EduTech</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApnaMaster | Master Maths & Science for Classes 6-10 (apnamaster.in)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">Apna Master EduTech</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#courses">Courses</a>
-            <a href="#admission">Admission</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Apna<span>Master</span>
+      </a>
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="blog.html" class="nav-link">Updates & News</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <button class="btn btn-accent" onclick="openEnrollModal('General Inquiry')">Enroll Now</button>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Shape Your Future with ApnaMaster.in</h1>
-        <p>Comprehensive preparation for Class 9–12 Math, Science, and Competitive Exams.</p>
-        <a href="#admission" class="btn-primary">Enroll Now</a>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="section">
-        <h2>Our Offered Batches</h2>
-        <div class="course-grid">
-            <div class="card">
-                <h3>Class 10 Science & Math</h3>
-                <p>Complete board syllabus coverage, regular mock tests, and personalized doubt clearance.</p>
-            </div>
-            <div class="card">
-                <h3>Class 12 Board Prep</h3>
-                <p>In-depth Physics, Chemistry, and Mathematics training with focus on board scoring patterns.</p>
-            </div>
-            <div class="card">
-                <h3>Competitive Foundation</h3>
-                <p>Targeted problem-solving sessions and speed techniques for competitive entrance exams.</p>
-            </div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="hero-title">Master Maths & Science with <span>ApnaMaster</span></h1>
+        <p class="hero-subtitle">Interactive conceptual coaching for CBSE & State Board students in Classes 6th to 10th. Build solid foundations and ace your exams.</p>
+        <div class="hero-highlights">
+          <span class="hero-tag">✓ Small Batch Sizes</span>
+          <span class="hero-tag">✓ Personal Doubt Clearing</span>
+          <span class="hero-tag">✓ Chapterwise Tests</span>
         </div>
-    </section>
-
-    <!-- Admission / Inquiry Form -->
-    <section id="admission" class="section bg-light">
-        <h2>Student Admission Inquiry</h2>
-        <p>Fill out the form below and our counseling team will contact you within 24 hours.</p>
-
-        <form id="inquiryForm" class="form">
+        <a href="courses.html" class="btn btn-accent">Explore All Courses</a>
+      </div>
+      <div>
+        <!-- Quick Inquiry Form -->
+        <div class="quick-inquiry-card">
+          <h3>Quick Class Inquiry</h3>
+          <form onsubmit="handleInquirySubmit(event)">
             <div class="form-group">
-                <label for="studentName">Student Name</label>
-                <input type="text" id="studentName" required placeholder="Enter full name">
+              <label>Student Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Rahul Sharma" required>
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" required placeholder="Enter 10-digit mobile number">
+              <label>Mobile Number</label>
+              <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="10-digit mobile number" required>
             </div>
             <div class="form-group">
-                <label for="course">Select Course</label>
-                <select id="course" required>
-                    <option value="">-- Choose a Batch --</option>
-                    <option value="Class 10">Class 10 (Science & Math)</option>
-                    <option value="Class 12">Class 12 (Physics/Chemistry/Math)</option>
-                    <option value="Foundation">Competitive Foundation</option>
-                </select>
+              <label>Class</label>
+              <select class="form-control" required>
+                <option value="">Select Class</option>
+                <option value="6">Class 6th</option>
+                <option value="7">Class 7th</option>
+                <option value="8">Class 8th</option>
+                <option value="9">Class 9th</option>
+                <option value="10">Class 10th</option>
+              </select>
             </div>
-            <button type="submit" class="btn-primary">Submit Inquiry</button>
-        </form>
-        <p id="formStatus" class="status-msg"></p>
-    </section>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Get Free Callback</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact & Location -->
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p><strong>Address:</strong> Main Road, Near City Center, Kanpur, U.P.</p>
-        <p><strong>Phone:</strong> +91 8318123116</p>
-        <p><strong>Timing:</strong> Monday – Saturday: 8:00 AM – 7:00 PM</p>
-    </section>
+  <!-- HIGHLIGHTS SECTION -->
+  <section class="section container">
+    <h2 class="section-title">Why Choose ApnaMaster?</h2>
+    <p class="section-subtitle">Delivering academic excellence through modern, student-centric methodologies.</p>
+    
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon">📘</div>
+        <h4>NCERT & State Syllabus</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted);">Comprehensive mapping with simplified chapter notes and structured exercises.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">📊</div>
+        <h4>Regular Assessment</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted);">Weekly quizzes and monthly mock tests with individual progress reporting.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🤝</div>
+        <h4>Dedicated Doubt Sessions</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted);">1-on-1 attention ensuring no concept or query goes unresolved.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2026 Apna Master EduTech. All rights reserved.</p>
-    </footer>
+  <!-- LATEST NEWS PREVIEW WIDGET -->
+  <section class="section" style="background-color: var(--bg-alt);">
+    <div class="container">
+      <h2 class="section-title">Latest Updates & Exam News</h2>
+      <p class="section-subtitle">Stay informed with daily study tips, syllabus notifications, and notifications.</p>
+      
+      <div class="blog-grid" id="homeNewsPreview">
+        <!-- Dynamically populated via JS -->
+      </div>
 
-    <script src="script.js"></script>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="blog.html" class="btn btn-outline">View All News & Tips</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="inquiryModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modalTitle" style="color: var(--primary); margin-bottom: 0.5rem;">Enrollment Inquiry</h3>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">Fill in your details below and our counseling team will call you back within 2 hours.</p>
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label>Student Name</label>
+          <input type="text" class="form-control" placeholder="Student name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="10-digit phone number" required>
+        </div>
+        <div class="form-group">
+          <label>Course Selected</label>
+          <input type="text" id="modalCourseInput" class="form-control" readonly>
+        </div>
+        <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 0.5rem;">Confirm & Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="https://wa.me/918318123116?text=Hi%20ApnaMaster,%20I%20want%20to%20inquire%20about%20admissions." target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>ApnaMaster</h4>
+        <p style="font-size:0.875rem; color:#94A3B8; margin-bottom: 1rem;">Empowering middle & high school students with rock-solid foundation coaching in Science and Mathematics.</p>
+        <p style="font-size:0.85rem; color:var(--accent);">Domain: <strong>apnamaster.in</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="courses.html">Class 6th - 10th Courses</a></li>
+          <li><a href="blog.html">Daily Updates & Tips</a></li>
+          <li><a href="contact.html">Admissions Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Classes</h4>
+        <ul>
+          <li><a href="courses.html">Class 6th Foundation</a></li>
+          <li><a href="courses.html">Class 7th & 8th Integrated</a></li>
+          <li><a href="courses.html">Class 9th Board Prep</a></li>
+          <li><a href="courses.html">Class 10th Board Intensive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ApnaMaster (apnamaster.in). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
