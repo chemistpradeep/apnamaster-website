@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | ApnaMaster (apnamaster.in)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Apna<span>Master</span>
+      </a>
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link active">Courses</a>
+        <a href="blog.html" class="nav-link">Updates & News</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <button class="btn btn-accent" onclick="openEnrollModal('General Course Inquiry')">Enroll Now</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- COURSES SECTION -->
+  <section class="section container">
+    <h1 class="section-title">Our Specialized Programs</h1>
+    <p class="section-subtitle">Comprehensive Mathematics and Science preparation for Classes 6th to 10th.</p>
+
+    <!-- Interactive Class Filter Tabs -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCourses('all', this)">All Classes</button>
+      <button class="filter-btn" onclick="filterCourses('6', this)">Class 6th</button>
+      <button class="filter-btn" onclick="filterCourses('7', this)">Class 7th</button>
+      <button class="filter-btn" onclick="filterCourses('8', this)">Class 8th</button>
+      <button class="filter-btn" onclick="filterCourses('9', this)">Class 9th</button>
+      <button class="filter-btn" onclick="filterCourses('10', this)">Class 10th</button>
+    </div>
+
+    <!-- Course Cards Container -->
+    <div class="courses-grid" id="coursesGrid">
+      <!-- Dynamically rendered via JS -->
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="inquiryModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modalTitle" style="color: var(--primary); margin-bottom: 0.5rem;">Enrollment Inquiry</h3>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">Fill in your details below and our counseling team will call you back within 2 hours.</p>
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label>Student Name</label>
+          <input type="text" class="form-control" placeholder="Student name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" pattern="[0-9]{10}" class="form-control" placeholder="10-digit phone number" required>
+        </div>
+        <div class="form-group">
+          <label>Course Selected</label>
+          <input type="text" id="modalCourseInput" class="form-control" readonly>
+        </div>
+        <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 0.5rem;">Confirm & Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="https://wa.me/918318123116?text=Hi%20ApnaMaster,%20I%20want%20to%20inquire%20about%20admissions." target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>ApnaMaster</h4>
+        <p style="font-size:0.875rem; color:#94A3B8; margin-bottom: 1rem;">Empowering middle & high school students with rock-solid foundation coaching in Science and Mathematics.</p>
+        <p style="font-size:0.85rem; color:var(--accent);">Domain: <strong>apnamaster.in</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="courses.html">Class 6th - 10th Courses</a></li>
+          <li><a href="blog.html">Daily Updates & Tips</a></li>
+          <li><a href="contact.html">Admissions Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Classes</h4>
+        <ul>
+          <li><a href="courses.html">Class 6th Foundation</a></li>
+          <li><a href="courses.html">Class 7th & 8th Integrated</a></li>
+          <li><a href="courses.html">Class 9th Board Prep</a></li>
+          <li><a href="courses.html">Class 10th Board Intensive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ApnaMaster (apnamaster.in). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
